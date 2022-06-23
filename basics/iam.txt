@@ -1,0 +1,28 @@
+Users,Groups,Policy
+
+Create Group -> Policy -> arn::aws::iam::aws:policy/AdministratorAccess
+
+Create User -> Access Type -> programmatic or console
+
+Link to Enter in console -> console login Link
+
+Access key ID , Secret Access key
+
+from cli:
+
+aws configure 
+output:json
+
+cd .aws
+
+cat credentials
+cat config 
+
+aws ec2 describe-instances
+
+roles -> доступ серверам -> приаттачить к серверу
+
+
+
+
+
