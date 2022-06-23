@@ -1,5 +1,7 @@
 2 users -> 2 groups -> bucket readers and bucket writers
 
+awscli
+
 .aws -> notepad credentials -> notepad config
 
 aws s3 mb s3://name_bucket --profile=writer 
