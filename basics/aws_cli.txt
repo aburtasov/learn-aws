@@ -1,0 +1,16 @@
+aws cli install
+
+requirenmetns: python
+
+Linux: 
+sudo apt install awscli
+aws --version
+python --version
+
+Windows:
+python --version
+pip install awscli
+aws --version
+
+
+
