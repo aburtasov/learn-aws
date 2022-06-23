@@ -1,0 +1,15 @@
+console -> services -> storage -> S3
+
+create Bucket -> имя часть доменного имени(названия бакета должно быть уникальным) -> region -> next
+-> set permissions -> review
+
+bucket empty -> create folder 
+upload files -> тип хранения
+
+file info -> link -> access denied ... more about file -> make public ... tags
+
+only files have a storage class
+
+file -> нажимаем на него -> info -> properties ...permissions
+
+delete bucket, empty bucket

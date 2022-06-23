@@ -1,0 +1,10 @@
+Права и политики доступа
+
+on bucket
+
+permissions -> access control list ->public access bucket
+
+bucket policy -> гибкая настройка в формате json -> policy generator
+
+Management -> Lifycycle
+
