@@ -1,0 +1,9 @@
+associate level:
+- solutions architect - тольуо с него начинать -> professional level
+- developer
+- sysops administrator -> professional level -> devops 
+
+speciality level:
+- big data
+- advanced networking
+

@@ -1,0 +1,35 @@
+Много дата-центров по всему миру
+Поделили на регионы
+
+Region - Географическая место расположения
+Availability Zone - Изолированный Дата-Центр(огромный ангар).В каждом Region минимум 2 Availability Zone
+
+Example.
+Region        Availability Zone(AZ)
+us-west-1     (us-west-1a,us-west-1b,us-west-2c)
+
+Сервисы. Знать хотя бы 20-30, уметь пользоваться хотя бы 10
+
+Amazon EC2 - виртуальные сервера(инстансы). Elastic-значит все можно менять,гибкость
+Elastic Load Balancing 
+AWS Elastic Beanstalk - zip-файл вашего сайта, все поднимается автоматически
+Amazon CloudFront - для кеша сайта. Статические картинки, файлы
+Amazon CloudWatch - мониторинг инфраструктуры
+Amazon S3 - share drive, типа dropbox
+Amazon Glacier - для архивирования данных. связан с S3. подождать 3-5 часов для download
+Amazon EFS - Elastic File System. Диск приаттачиваем к нескольким серверам
+AWS CloudFormation - iaas. template. описывать инфраструктуру в коде
+AWS OpsWorks
+Amazon RDS - базы данны SQL. реляционные.reletion data store
+Amazon DynamoDB - NoSQL
+Amazon Redshift - для анализа данных
+Amazon EMR - Elastic map reduce. Big data. Работа с большими данными
+Amazon IAM - identity access Management. Как active directory в Windows. Создаете пользователей,группы, правила и доступа
+Amazon VPC - virtual private cloud. Создание subnets. Routing tables. Firewall rules
+Amazon Route53 - DNS сервер Amazon. Можно купить domain name. Dns работает через порт 53
+Amazon SES - simple email service
+Amazon SNS - simple notification service. совместно с CloudWatch
+Amazon SQS 
+
+
+

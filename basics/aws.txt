@@ -1,0 +1,13 @@
+- Virtual Servers           EC2 Instances
+- Virtual Network           VPC
+- Unlimited Web Space       S3 bucket
+- Web Sites Hosting         S3 Web Hosting
+- Domain registration,DNS   Route53
+- SQL and NoSQL Database    RDS, DynamoDB
+- Infrastructure as Code    CloudFormation
+- Automation                Elastic Beanstalk
+- Devops                    
+many more...
+
+Cloud Computing: aws,azure,gcp
+
