@@ -1,0 +1,31 @@
+simple storage service
+
+share drive -> хранятся файлы, в том числе большие. -> есть линк -> быстрое хранилище данных
+
+Bucket - directory
+
+Гарантируется:
+99,99% availability
+99,999999999% durability
+
+Используется:
+-Backup & Recovery -> можно туда закинуть
+-Data archiving
+-Big Data analytics  -> положить туда файлы для анализа.
+-Статические Web Sites
+-Internet Share Drive  -> типа Dropbox
+
+Максимальный файл/объект: 5TB
+Максимальный размер файла за один PUT(Upload)=5GB
+Большие файлы можно загружать через MultiPart Upload
+
+Типы хранения файлов
+1-Amazon S3 Standard
+2-Amazon S3 Standard-Infrequent Access //подешевле
+3-Reduced Redundancy storage // еще дешевле, медленнее доступ,данные могут потеряться
+4-Amazon Glacier //архив, немоментальный доступ. От 3 до 5 часов
+
+Concurren facility fault tolerance, SSL Support,Fist by latency, Lifycycle Management Policies
+
+Versioning, Logging, Static WebSite Hosting, Tags, Cross-region replications,
+Transfer Acceleration, Events,Request pays
