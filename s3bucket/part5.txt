@@ -1,0 +1,20 @@
+Logging, Web Site
+
+Logging - сохранять все, что происходит в бакете.
+
+2 бакета лежат в одном регионе
+
+Заходим в бакет, который хотим контроллировать -> Logging Enable -> Terget bucket -> prefix
+
+=================================================================
+
+Managment -> Lifecycle -> Rule -> Старые файлы в топку -> Транспортировку на класс ниже -> Стереть
+
+=================================================================
+
+Static Web Hosting
+
+Create bucket -> domain name -> properties -> Static Web Hosting -> файлы index.html и error.html -> upload -> dns-link
+Все файлы сделать public
+
+
