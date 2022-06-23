@@ -1,0 +1,20 @@
+бесплатный аккаунт -> free tier
+sign in to console
+
+===============================
+
+настройка
+
+сервис IAM:
+
+link для users
+
+- iam password policy
+- create users
+- create group (administrators,developers) -> policy
+
+activate mfa (multi factor auth) -> virtual mfa device -> google autenticator
+
+
+
+
