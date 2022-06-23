@@ -1,0 +1,15 @@
+2 users -> 2 groups -> bucket readers and bucket writers
+
+.aws -> notepad credentials -> notepad config
+
+aws s3 mb s3://name_bucket --profile=writer 
+
+aws s3 mb s3://name_bucket --region=us-west-1 --profile=writer 
+
+aws s3 ls --profile=reader 
+
+aws s3 cp file_name s3://name_bucket --profile=writer
+
+синхронизация лок директории с бакетом:
+aws s3 sync . s3://name_bucket
+
