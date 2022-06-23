@@ -1,0 +1,37 @@
+EC2 service -> pin 
+
+EC2 dashboard
+
+Region
+
+Running Instances -> Launch Instance
+
+1. Choose AMI (free tier)
+2. Instance Type (t2.micro -> free tier)
+3. Instance Details (count , network, user_data)
+4. Add Storage
+5. Add Tags
+6. Security Group(Firewall). 
+Name:MyFirewall-http-https-rdp
+Description: Firewall rules for Windows Server
+Add rule: http, https (anywehere), rdp
+7. Review
+
+Launch -> Create key pair
+
+Actions -> Instance Settings -> Get Screenshot
+
+mstsc -> publicIP -> Administrator -> Connect -> GetPassword -> decrypt -> password
+
+Диски -> disk Management -> online -> init -> added
+
+Server Manager -> Add roles and features -> next ->Web Server(IIS)
+inttpub->wwwroot  // index.html for IIS
+
+============================================
+
+Instance State -> Terminate -> Terminate Protecton
+Instance Settings -> Change Termination Protection
+
+Volumes -disks
+
