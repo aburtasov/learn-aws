@@ -1,0 +1,27 @@
+1. Launch Instance -> free tier -> AMI
+2. t2.micro
+3. 1 count
+4. add Storage
+5. Tags
+6. Security Group (можно выбрать уже имеющуюся -> security Group ID), порт http,ssh
+7. Review
+
+key pair ... Launch
+
+get Instance Screenshot
+
+Connect ... подсказка ... ec2-user
+
+yum install httpd // Apache
+
+cd /var/www/html
+
+service httpd start
+
+chkconfig on 
+
+====================================================
+
+Instance State -> Terminate
+
+
