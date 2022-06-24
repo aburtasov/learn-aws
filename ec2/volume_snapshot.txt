@@ -1,0 +1,48 @@
+Instance - Виртуальный сервер 
+Volume - HDD/SSD 
+
+Snapshot - Резервная копия Volume
+AMI - Резервная копия Instance (Golden Copy)
+AMI - Amazon Machine Image
+
+=============================================
+
+ec2 -> running Instance -> free tier only -> win server 2008 -> t2.micro -> configure instance details -> 
+My AMI's
+
+Step 4. Add Storage
+Root for OS General Purpose SSD
++ EBS General Purpose SSD
++ EBS  Magnetic
+
+Step 5. Add Tags
+Step 6. Configure security group (firewall)
+Step 7. Review
+
+Если серверу делаем restart, то он остается на том же физическом сервере. Если stop-start , то другой физический сервер
+
+Elastic IP - постоянный внешний ip 
+IPv4 Public - внешний ip, но если stop-start, то он сменится
+Private IP - не меняется
+
+VPC 
+Subnet
+
+Username -> Connect
+
+MobaXTerm
+
+Elastic Block Store -> Volumes -> List Volumes -> Actions 
+
+Offline - Online
+
+Detach - Attach . Only one availability zone
+
+Резервная копия диска -> Volumes -> Create Snapshot
+
+From Snapshot -> Create Volume ... Copy to Region
+
+
+
+
+
