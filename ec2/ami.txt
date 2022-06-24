@@ -1,0 +1,12 @@
+AMI's -> amazon machine images -> полная резервная копия (golden copy)
+
+EC2 -> instances -> choose instance -> actions -> image -> create
+
+images -> ami's -> проверяем ... также создаются snapshots
+
+terminate servers
+
+copy ami -> to any region
+
+-> create instance -> my ami ...
+
