@@ -1,0 +1,12 @@
+bootstrapping - самонастройка серверов
+
+configure instance details -> user data
+
+less /var/log/cloud-init-output.log
+
+view/change user data
+
+2016 : program data/ amazon/ec2-windows/launch/log/userdataexecution
+
+
+
