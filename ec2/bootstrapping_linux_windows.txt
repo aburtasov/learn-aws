@@ -6,7 +6,7 @@ less /var/log/cloud-init-output.log
 
 view/change user data
 
-2016 : program data/ amazon/ec2-windows/launch/log/userdataexecution
-
+2016 : program data/ amazon/ec2-windows/launch/log/userdataexecution.txt
+2012 : program files/amazon/ec2configservice/logs/ec2configlog.txt
 
 
