@@ -1,0 +1,8 @@
+aws.training
+
+aws certification account -> create account if not exists
+
+previous Exams , digital badges , download certs 
+
+schedule new exam 
+
