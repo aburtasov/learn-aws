@@ -1,0 +1,42 @@
+s3 -> несколько бакетов -> static web site 
+
+iam -> users and groups 
+
+iam -> roles -> create  //дать роль серверу, чтобы у него был доступ к вашим сервисам
+
+role type:
+aws service
+another aws account
+saml - for active directory
+web identity - facebook, etc
+
+роли глобальные на все  регионы
+============================================
+
+iam -> roles -> create -> aws service -> ec2 -> use case -> next -> amazonS3ReadOnlyAccess -> role name
+iam -> roles -> create -> aws service -> ec2 -> use case -> next -> amazonS3FullAccess -> role name
+
+Теперь можно запускать ec2 instances и приаттачивать roles
+
+aws s3 ls 
+aws configure // хочу, чтобы заработало без access keys
+
+attach role 
+aws s3 ls 
+
+роль приаттачивать можно только одну к инстансу
+
+aws s3 mb s3://uniq_name  // make bucket 
+
+как использовать при создании
+
+launch -> iam role -> amazonS3ReadOnlyAccess
+
+user data :
+#! /bin/bash 
+yum -y update
+yum -y install
+aws s3 sync s3://bucket_name /var/www/html
+sudo service httpd start
+chkconfig httpd on 
+
