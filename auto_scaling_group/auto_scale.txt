@@ -1,0 +1,40 @@
+Vertical Scaling:
+t2.micro -> t2.medium -> c4.xlarge ... 
+
+Horizontal Scaling:
+добавление реплик инстансов. баланс между avalaibility zones
+
+Auto Scaling Group можно привязать к ELB
+
+scale out(up), scale in(down). rules
+
+console -> ec2 -> Auto Scaling
+
+Auto Scaling Group привязан к Launch Configuration(golden copy)
+
+launch configuration:
+-Описывает какой сервер запускать
+-Тип(t2.micro,t2.large...)
+-Какие диски прикрепить 
+-SSH Key
+-User Data
+
+Auto Scaling Group:
+-Описывает сколько серверов запускать 
+-И когда эти сервера запускать , а также убирать
+
+=====================================================
+Auto Scaling Group
+
+Subnet in AZ: Какие AZ использовать для запуска серверов
+Min : Минимальное количество запущенных серверов
+Max : Максимальное количество
+Desired : Желаемое текущее количество серверов
+LoadBalancer: Можно присоеденить к ELB 
+ScaleOUT : когда добавлять сервера 
+Scale IN : когда убивать сервера
+
+====================================================
+
+
+
