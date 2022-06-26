@@ -1,0 +1,13 @@
+Private IP - адрес доступный внутри сети 
+Public IP - публичный адрес доступный в интернете. Меняется при stop-start instance . Не меняется при Reboot
+Elastic IP - адрес доступный в интернете. Не меняется 
+
+ec2 -> запустим пару инстансов 
+
+Elastic IP -> на каждый аккаунт лимит в 5 адресов в каждом регионе-> allocate new address -> release(убрать) -> associate
+приаттачить к серверу или к сетевой карте 
+
+sudo chmod 400 
+
+Allow Elastic IP to be reassociated if already attached 
+
