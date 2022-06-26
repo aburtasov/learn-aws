@@ -1,0 +1,35 @@
+Дешевая простейшая архитектура
+internet -> data center -> web server(ec2)
+
+Не Дешевая простейшая архитектура
+internet -> Elastic Load Balancer(public ip,dns name) -> data center -> 2 одинаковых web server(ec2)
+
+Не Дешевая хорошая архитектура
+internet -> Elastic Load Balancer -> 2 availability zone(можно больше) -> в каждой зоне ec2 web server
+
+
+===========================================================================
+
+Поднимим 3 web servers в разных availability zone. subnet выбираем availability zone
+
+===========================================================================
+
+console -> Load Balancer -> Create Load Balancer -> Classic Load Balancer(все, что получает, рассылает по очереди серверам)
+Application Load Balancer. Если на http, то на такие то сервера. Если на https, то на другие сервера. Target Groups
+Network Load Balancer. Гибкая настройка, если на http, то на такие то сервера. Если на https, то на другие сервера. Запрос с такого-то ip ,то переслать туда.
+Если с определенного dns , то тоже на конкретный сервер.
+
+
+Create Load Balancer -> Classic Load Balance -> Name and Network ( internal elb не имеет выход в интернет). Нужен internet faced. Listner Congiguration
+(443->80 termination https, ssl) -> Enable Advanced VPC Congiguration(выбрать availability zone) -> security group -> configure security settings (для https) ->
+configure health check(проверка доступности веб-серверов)(http->80->index.html)(responce timeout(ждем ответа),interval(через какое время делать проверку),
+unhealthy threshold(кол-во неудачных попыток подряд),healthy threshold(через сколько удачных попыток поставить сервер в балансировку)) ->
+add ec2 instance(доступны сервера в разных AZ) -> Enable Cross-Zone Balancing -> Enable Connection Draining (если есть коннект к серверу, то при следующем подключении клиент 
+направляется к этому же серверу) -> Add Tags -> Review
+
+Out of service
+In service
+
+При warm Load Balance(test) -> request to support 
+
+ 
