@@ -36,5 +36,23 @@ Scale IN : когда убивать сервера
 
 ====================================================
 
+console -> Auto Scaling -> Create Auto Scaling Group
+
+Create Launch Configuration - тоже самое, что создать ec2 instance. Можно использовать свой готовый ami
+
+Можно сделать еще один Launch Configuration
+
+Create Auto Scaling Group -> Launch Configuration -> Size, Subnets -> Scale Policy(Inscrease Group Size or Decrease) -> alarm 
+notifications -> tags
+
+Create LoadBalancer
+
+Идем в Auto Scaling Group -> edit -> attach LoadBalancer
+edit -> change Launch Configuration
+
+чтобы полностью сменить Launch Configuration, можно убить старые сервера
+
+нельзя сделать update Launch Configuration. Можно только заменить на новый
 
 
+edit -> termination policies
