@@ -1,0 +1,21 @@
+vpc - virtual private cloud 
+это сеть, которую можно поднять в cloud
+
+по default -> 1 vpc -> subnets = кол-ву AZ
+
+VPC - CIDR blocks
+Public Subnet - часть VPC, отличается от других subnets, тем что в этой сети есть public IP's , прямой доступ в интернет с каждого хоста в этой сети
+Private Subnet - часть VPC, без доступа в интернет, могу лишь выходить в интернет через NAT
+Database Subnet - private subnet, нет доступа в интернет, нет route к NAT
+
+Route Table - таблица маршрутизации, к которой мы приаттачиваем разные сети. Показывает,если пакет идет в интернет, 
+то какой следующий хост должен обработать его.
+
+Internet Gateway - приаттачиваем к VPC, у VPC появляется доступ в интернет.
+
+NAT Gateway - ложим его в public subnet. Через него могут идти в интернет хосты из private subnet. Manegment, эластичен пропорцианально трафику
+NAT Instance - настраивается, как ec2.
+Security Group - Firewall Rules, правила открытия портов, приаттачиваем к инстансам. Statefull сервис. На in и out 
+Network Access Control List - добавляется на subnet , stateless. Отдельно 22 порт на in, например. Более гибкая настройка
+
+
