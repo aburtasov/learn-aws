@@ -18,4 +18,40 @@ NAT Instance - настраивается, как ec2.
 Security Group - Firewall Rules, правила открытия портов, приаттачиваем к инстансам. Statefull сервис. На in и out 
 Network Access Control List - добавляется на subnet , stateless. Отдельно 22 порт на in, например. Более гибкая настройка
 
+Bastion Host - инстансы в private subnet -> чтобы попасть в эту сеть есть бастион, смотрит в интернет и с него можно попасть в private
+VPC Flow Logs - сохранются все логи всего трафика. Можно включить только на отдельные сетевые карты
+VPN Gateway
+VPC Peering - соединять 2-3 vpc сети
+========================================================================
+Сделаем VPC -> 2 AZ - > в каждой AZ 3 subnets(public,private,database) -> NAT Gateway A и NAT Gateway B , Bastion Host -> Internet Gateway на всю VPC
 
+========================================================================
+
+VPC CIDR block 
+10.0.0.0/16 - 65536 IP addresses minus 5 IP reserved by AWS.Самый большой VPC 
+10.0.0.0/24 - 254 IP minus 5 IP 
+10.0.0.0/28 - 16 IP minus 5 IP , самая маленькая
+
+CIDR:10.0.10.0/24
+-10.0.10.0 Network address 
+-10.0.10.1 Reserved by AWS
+-10.0.10.2 Reserved by AWS
+-10.0.10.3 Reserved by AWS
+10.0.10.255 Reserved by AWS. broadcost not supporting 
+
+=====================================================================
+
+Subnet CIDR block должен быть в зоне VPC CIDR block
+VPC CIDR : 10.0.0.0/16
+Subnets CIDR : 
+    - 10.0.10.0/24 Public A 
+    - 10.0.11.0/24 Private A 
+    - 10.0.12.0/24 Database A
+    - 10.0.20.0/24 Public B 
+    - 10.0.21.0/24 Private B
+    - 10.0.22.0/24 Database B 
+
+=================================================================
+
+VPC создается в одном регионе на все AZ 
+Internet Gateway один на всю VPC . NAT Gateway создаются в public subnets
