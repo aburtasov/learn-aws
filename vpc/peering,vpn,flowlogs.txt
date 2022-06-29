@@ -1,0 +1,48 @@
+VPC Flow Logs - лог файлы всех сетевых пакетов в вашей сети, на уровне:
+1. VPC 
+2. Subnet
+3. Network Interface 
+
+Прежде всего нужно создать
+IAM Role и указать разрешение записывать события в CloudWatch Logs 
+
+IAM -> create policy -> copy json (iam roles for flow logs) -> create -> name 
+create roles -> ec2 ->permissions -> search our policy -> ставим галочку -> role name  ...add trus relation
+
+vpc -> flow logs -> create flow logs -> filter all -> role -> dest log group (/aws/our-logs) -> create flow log 
+
+CloudWatch -> Logs -> каждая сетевая карточка ...что это значит читать в docs 
+Все данные сохраняются в специальном s3 бакете
+
+========================================================================================
+
+VPC Peering 
+
+Соединение VPC сетей, дает возможность общения серверов в одной VPC с серверами в другой VPC использую privateIP адреса.
+Соединить можно только сети в одном и том же регионе AWS. И только если CIDR block не перекрещиваются, то есть нет одинаковых адресов.
+
+VPC KGB <-> VPC FBI <-> VPC Mossad ... VPC KGB не может достучать до сети VPC Mossad, необходимо соединять их отдельно
+
+=====================================================================================
+
+VPN Connection
+
+1. Virtual Private Gateway - Создается в VPC 
+2. Customer Gateway - Создается в вашей сети(домашней, офисной) 
+
+Virtual Private Gateway <--VPN Connection-->Customer Gateway
+
+Если много офисов, то в каждом офисе Customer Gateway(сервера)
+
+===================================================================================
+
+Расширение сети 
+
+VPC -> Edit CIDRs .. -> add CIDR block
+
+==================================================================================
+
+Чтобы удалить сеть , сначала terminate instances
+
+При стирании VPC удаляется subnets, route tables ... кроме NAT с Elastic IP ...удалить
+Не забыть удалить EIP 
