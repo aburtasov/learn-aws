@@ -1,0 +1,20 @@
+auto scaling group -> min 1, max 1
+
+create security group -> choose our vpc -> ssh port 
+
+ create launch config -> amazon linux -> t2.micro -> name -> storage add -> select sg -> create
+
+ create auto scaling group -> name -> Network Our VPC ->  public subnets -> initial size -> tags -> review  
+
+ переходим в ec2 -> сервер запускается
+
+ создадим инстанс в private subnet
+ созадим инстанс в database subnet
+
+ подключимся на бастион ...private key for region 
+
+ через bastion -> к инстансу в private
+ через bastion -> к инстансу в database
+
+ 
+
