@@ -1,0 +1,43 @@
+2 AZ
+
+your vpc -> есть default vpc
+
+create vpc -> name -> Our Network -> CIDR block 10.0.0.0/16 - tenancy(dedicated - повышает перфоманс. на одном железе) -> протянулись кабеля
+
+create internet gateway(tесть default) -> name -> Our Network IGW ... Attach to VPC (теперь есть доступ в интернет).
+
+subnets -> есть default... -> create subnet -> name PublicA Subnet -> choose our VPC -> choose AZ(subnet может быть только в одной AZ) -> CIDR block(10.0.11.0/24) -> create
+
+создадим еще одну subnet в другой AZ -> CIDR block(10.0.21.0/24)
+
+у subnets есть route table -> есть общение между subnets -> modify auto-assign IP -> теперь эти сети public 
+
+rout table
+destination   target 
+10.0.0.0/16   local  (все пакеты в этой сети пересылаются локально)
+
+Edit -> route table -> add another route -> 0.0.0.0/0  -> Our Network IGW
+
+Network ACL (типа Firewall) -> по умолчания разрешает все. -> если заблокировать ddos , то здесь -> create rule -> правила сверху вниз...inbound,outbound rules 
+
+=======================================================================
+
+создадим еще 2 private subnets ... без доступа в интернет -> по умолчанию добавилась наша route table ... плюс нет public ip 
+create route table for private subnet -> create ...-> приаттачить -> subnet associations ... пока без NAT 
+
+=======================================================================
+
+создадим 2 private subnets for database ... без доступа в интернет -> созадим route table для этой сети -> приаттачиваем
+
+=======================================================================
+
+create 2 NAT Gateway(для них нужен Elastic IP) -> установим их в public subnet -> create new eip -> create
+
+======================================================================
+
+созадим еще одну route table for private subnet и отредактируем обе -> associat
+edit route table
+10.0.0.0/16 local
+весь трафик 0.0.0.0/0 идет через nat 
+
+=====================================================================
