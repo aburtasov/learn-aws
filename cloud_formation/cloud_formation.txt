@@ -1,0 +1,22 @@
+CloudFormation - Программирование Инфраструктуры AWS
+Infrastructure as a Code - IaaC
+Автоматизация создания и изменения инфраструктуры
+
+- CloudFormation Stack - Контейнер с созданными ресурсами
+- CloudFormation Template - программный код контейнера - шаблон
+
+Формат-синтаксис кода:
+yaml
+json 
+
+Шаблон инфраструктуры запускаете в любом AWS Region.
+При изменении когда делаем Update инфраструктуре.
+Удаление всей инфраструктуры при удалении Stack.
+
+Альтернатива - Terraform
+
+..... код CloudFormation .....
+
+examples на aws 
+
+CloudFormation -> create -> upload file
