@@ -69,3 +69,5 @@ from aws-cli
 aws lambda invoke --function-name=MyLambda-ListS3Buckets --region=us-west-2 output.txt
 
 aws lambda invoke --function-name=MyLambda-CreateS3Bucket --region=us-west-2 output.txt
+
+aws s3 ls 
