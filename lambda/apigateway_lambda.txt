@@ -1,0 +1,34 @@
+API Gateway
+Позволяет создать Front Door для ваших программ, чтобы получить доступ к вашим ресурсам на AWS
+
+Как пример мы используем наши две Lambda функции и сделаем:
+
+- Создадим API Gateway, который даст на URL на каждую Lambda функцию
+- Открывая этот URL в браузере, наша Lambda будет запускаться
+- Поставим API Key, чтобы защитить допуска к API Gateway URL
+
+Lambda -> найдем наши 2 функции
+API Gateway -> Get started -> new API -> name ...description ... endpoint type(edge optimized) -> create
+Actions -> create method -> get -> Lambda function -> Lambda region -> Lambda function
+Test ...
+Actions -> Deploy API -> stage name (prod) ... появился URL
+
+сделаем еще один API Gateway ...
+create method -> get ...
+
+========================================================================================================
+
+Защита API
+
+Сделаем API Key -> name -> auto generate ....
+
+Создаем метод пост для API , который создает s3 bucket 
+
+Перейдем в метод POST -> API Key Required -> true  -> Deploy
+
+Usage Plans -> create -> add API stage -> create bucket -> add API key to Usage Plan
+
+curl -X POST -H "x-api-key: key" url 
+
+
+
