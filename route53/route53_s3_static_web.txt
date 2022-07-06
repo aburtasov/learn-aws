@@ -1,0 +1,21 @@
+1. Регистрация домена на Route53 
+2. Создание Static Web Page on S3 bucket
+3. Создание HostedZone с нашим доменом и Alias Record на нашу страницу
+4. Полное переключение нашего домена на Route53, наш новый DNS
+
+================================================================
+
+1. console -> Route53 -> domain reg -> choose domain name -> personal info -> continue
+
+================================================================
+
+2. s3 -> create bucket (name as domain name)
+   s3 -> create bucket (name www.domain name)
+  upload files in first bucket ... выбрать все файлики и сделать public access(или bucket policy -> from aws policy ... make bucket public) ->
+  properties - static web -> use this bucket to host -> main doc (index.html) ... dns link
+
+  www.domain bucket -> properties -> static web -> redirect -> first bucket
+
+================================================================
+
+Route53 -> hosted zone -> create record set -> alias -> choose our domain name + create record -> www -> alias -> www domain name
