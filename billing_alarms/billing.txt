@@ -1,0 +1,5 @@
+account -> my billing dashboard -> bills -> выбираем дату -> смотрим детали ... стираем все, чтобы не превысить free tair
+
+поставить alarm
+
+service -> cloudwatch -> billing(only n.virginia region) -> create alarm -> exceed 5$ ... send a notification to 
