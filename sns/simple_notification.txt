@@ -1,0 +1,37 @@
+sns - simple notification service
+
+Позволяет публиковать сообщения, работает как лист рассылок
+
+Topic - Тема листа рассылки
+Subscribers - список подписчиков на Тему 
+
+Работает как Push Notification, в отличии от Pull Notification(SQS).
+Вы делаете Publish вашего сообщения в Topic и ваше сообщение тут же будет доставлено всем, кто пописан на ваш Topics, то есть всем 
+Subscribers на эту тему
+
+Подписчики это протокол через который передается сообщения:http,https,email,email-json,amazon SQS,
+application, aws lambda , sms 
+
+При публикации сообщения в Topic будет происходить следующее:
+- http - послан запрос на ваш веб-адрес используя порт 80
+- https - послан запрос на ваш веб-адрес используя порт 443
+- email - послан email в обычном текстовом формате
+- email-json - послан email в фомате json
+- amazon SQS - публикация сообщения в очеред SQS
+- application - публикация сообщения в апликации(amazon device messaging,apple production,apple development,google cloud messaging, etc)
+- aws lambda - запуск lambda функции с вашим сообщением как параметр
+- sms - посылка sms-сообщений 
+
+Topic -> Congratulations <- message("Happy NY!!!") ... Subscribers: vasya@example.com , petya@example.com , +1-123-456-7890 , https://test.net/api/congr
+
+Topic -> Support Team  <- message("Company WebSite Down!") ... Subscribers:vasya@example.com , petya@example.com , +1-123-456-7890, Lambda-Restart Apache
+
+https://aws.amazon.com/sns/pricing/
+
+
+console -> sns -> get started -> sns dashboard -> create new Topic -> push message 
+Subscribers -> create -> topic arn -> protocol ... все email должны confirm to topic
+
+Topic -> Publish -> push message
+
+Не во всех регионах есть sms 
