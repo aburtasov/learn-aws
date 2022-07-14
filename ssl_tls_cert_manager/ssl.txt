@@ -21,3 +21,26 @@ Domain name -> *.domainname.net  -> Email Validation -> Confirm
 =========================================================================================================================================
 
 SSL cers with ELB && CloudFront и создание Route53 SubDomains
+
+Domain: store.net 
+SubDomain для ElasticLoadBalancer: myloadbalancer.store.net 
+SubDomain для CloudFront : mysslclodfront.store.net 
+
+
+Amazon Route53 -> https -> Classic Load Balancer -> http -> WebServer1 && WebServer2
+ssl termination 
+
+Amazon Route53 -> https -> Amazon CloudFront -> S3 Bucket (Static Web Site)
+
+==========================================================================================================================================
+
+Есть ELB с DNS name (некрасивое)
+edit ElasticLoadBalancer -> Listener -> add https -> LB Port 443 && Instance Port 80 -> SSL Cert -> Change -> Choose cert from ACM -> выбираем наш сертификат
+
+Теперь Route53 -> Hosted zones -> Create Record Set -> name(myloadbalancer.store.net ) Type A -> Alias -> dns name ELB 
+
+==========================================================================================================================================
+
+CloudFront -> Distr Settings -> Edit -> Domain Name (mysslclodfront.store.net ) -> SSL Cert (Custom) -> Yes 
+
+Теперь Route53 -> Hosted zones -> Create Record Set -> name(mysslclodfront.store.nett ) Type A -> Alias -> dns name CDN 
