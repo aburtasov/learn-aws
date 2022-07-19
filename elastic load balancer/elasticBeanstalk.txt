@@ -1,0 +1,29 @@
+Elastic Beanstalk - позволяет очень быстро поднять инфраструктуру для вашего Web приложения. Также очень легко и быстро обновляет ваш код включая возврат на предыдущую версию -
+Rollback.
+
+Дает возможность легко выполнять DevOps Green/Blue Deployment метод.
+
+Поддерживает следующие платформы:
+Java
+.NET
+PHP
+Node.js
+Python
+Ruby
+Go
+Docker
+
+========================================================================================================
+
+Devops Green/Blue Deployment
+
+Internet -> Load Balancer -> EC2 Version1 && EC2 Version1   // BLUE -> prod 
+
+Создается новая инфраструктура: Load Balancer -> EC2 Version2 && EC2 Version2 // GREEN -> staging
+
+Internet -> Load Balancer -> EC2 Version2 && EC2 Version2  // Меняем dns для нашего сервиса 
+
+========================================================================================================
+
+console -> Beanstalk -> Create new Application -> Name 
+Actions -> Create Evironment -> Web Server
