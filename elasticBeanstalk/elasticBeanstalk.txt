@@ -26,4 +26,15 @@ Internet -> Load Balancer -> EC2 Version2 && EC2 Version2  // Меняем dns �
 ========================================================================================================
 
 console -> Beanstalk -> Create new Application -> Name 
-Actions -> Create Evironment -> Web Server
+Actions -> Create Evironment -> Web Server -> Configuration ... Upload code (or Sample Application for testing)
+Поднимается инфраструктура для нашего проекта
+Получаем url ... его можно привязать к нашему домену через route53
+Upload and Deploy 
+
+====================================================================================================
+
+Swap URL  для Blue/Green Deployment
+
+=================================================================================================
+
+Application versions -> Deploy   откат на ранние версии 
