@@ -53,3 +53,5 @@ tags -> ...
 connect to one of servers -> ssh
 
 our deployment package -> внутри .ebextensions -> внутри 2 config файла и 1 дирекория 
+
+zip -> Upload and Deploy 
