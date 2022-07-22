@@ -1,0 +1,55 @@
+.ebextensions - *.config файлы наших настроек в директории .ebextensions позволяют
+полную кастомизацию инфраструктуры для Elastic Beanstalk
+
+- 01_create_folders.config
+- 02_copy_apache_config_files.config
+- 03_create_s3bucket.config 
+// в алфавитном порядке 
+
+.ebextensions  -> config файлы + вспомогательные директории
+index.php 
+прочие файлы проекта 
+
+все это архивируется
+
+==================================================================================
+config файлы
+yaml или json 
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions.html
+
+Группы команд в config файлах:
+- packages - скачать и инсталировать программы(yum,rpm,msi)
+- sources - скачать архив из инета и распаковать(tar,gzip,zip)
+- files - создать файлы
+- users - создать пользователей на Linux 
+- groups - создать группы только на Linux 
+- commands - запустить системные команды перед распаковкой zip 
+- container_commands - запустить системные команды после распаковки 
+- services - стоп, старт сервисов
+- Resources - создание доп ресурсов AWS 
+
+=================================================================================
+
+console -> elasticbeanstalk -> create Application -> create environment ->
+-> Sample Application -> Configuration more options 
+-> php version
+
+modify software -> document root 
+environment properties -> name - value
+modify instances -> ....
+capacity -> LB ... scaling triggers ...
+rolling updates -> update type ...
+security ->
+monitoring ->
+notification ->
+network ->
+database -> не рекомендуется ... делается db отдельно от elasticbeanstalk
+tags -> ...
+
+==============================================================================
+апликация запустилась
+
+connect to one of servers -> ssh
+
+our deployment package -> внутри .ebextensions -> внутри 2 config файла и 1 дирекория 
